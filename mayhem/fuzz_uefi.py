@@ -16,8 +16,7 @@ def TestOneInput(data):
         if fdp.ConsumeBool():
             parser = uefi_firmware.AutoParser(fdp.ConsumeRemainingBytes())
             if parser.type() != 'unknown':
-                firmware = parser.parse()
-                firmware.showinfo()
+                parser.parse()
         else:
             buff = fdp.ConsumeRemainingBytes()
             comp_buff = uefi_firmware.efi_compressor.LzmaDecompress(
