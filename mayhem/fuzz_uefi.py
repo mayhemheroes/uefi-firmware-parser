@@ -16,7 +16,7 @@ def TestOneInput(data):
         if fdp.ConsumeBool():
             parser = uefi_firmware.AutoParser(fdp.ConsumeRemainingBytes())
             if parser.type() != 'unknown':
-                firmware = uefi_firmware.parse()
+                firmware = parser.parse()
                 firmware.showinfo()
         else:
             buff = fdp.ConsumeRemainingBytes()
