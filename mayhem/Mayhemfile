@@ -1,0 +1,7 @@
+project: uefi-firmware-parser
+target: fuzz-uefi
+
+cmds:
+  - cmd: /src/mayhem/fuzz_uefi.py
+    libfuzzer: true
+    timeout: 12
