@@ -1,0 +1,10 @@
+# Mayhem target: uefi-firmware-parser (Atheris/libFuzzer harness).
+# The cmd binary is the compiled ELF launcher that drives mayhem/fuzz_uefi.py; Atheris instruments
+# the uefi_firmware library so the run records coverage (edges). Target name kept as the original
+# `fuzz-uefi` for parity with the pre-port integration.
+project: uefi-firmware-parser
+target: fuzz-uefi
+
+cmds:
+  - cmd: /mayhem/fuzz_uefi
+    libfuzzer: true
